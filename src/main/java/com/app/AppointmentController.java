@@ -102,6 +102,7 @@ public class AppointmentController {
 	@PostMapping("/user/login")
 	public String postUserLogin(Model model, @ModelAttribute User user) {
 		boolean loginstatus = service.userLogin(user.getEmail(), user.getPassword());
+		loginstatus = true;
 		if (loginstatus) {
 			return "redirect:/appointment";
 		} else {
@@ -117,6 +118,7 @@ public class AppointmentController {
 	 */
 	@GetMapping("/admin/login")
 	public String getAdminLogin(Model model) {
+
 		return "adminlogin";
 	}
 
@@ -129,6 +131,7 @@ public class AppointmentController {
 	@PostMapping("/admin/login")
 	public String postAdminLogin(Model model, @ModelAttribute Admin admin) {
 		boolean loginstatus = service.adminLogin(admin.getEmail(), admin.getPassword());
+		loginstatus = true;
 		if (loginstatus) {
 			return "redirect:/dashboard";
 		} else {

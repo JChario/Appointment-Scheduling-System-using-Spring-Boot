@@ -37,7 +37,7 @@ public class AppointmentService {
 	 */
 	public boolean findByUserEmail(String email) {
 		userRepo.findByEmail(email);
-		return true;
+		return false;
 	}
 
 	/**
